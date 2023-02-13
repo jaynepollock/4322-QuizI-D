@@ -12,30 +12,57 @@ import csv
 
 #open the file
 
-
+infile = open('employee_data.csv','r')
+reader = csv.reader(infile, delimiter = ",")
+next(reader)
 
 
 #create an empty dictionary
-
+saldict = {}
 
 #use a loop to iterate through the csv file
+for row in reader:
+    idnum = row[0]
+    fname = row[1]
+    lname = row[2]
+    dpt = row[3]
+    title = row [4]
+    salary = int(row[5])
+    hiredate = row[6]
+    bday = row[7]
+    gender = row[8]
+    clearance = row[8]
 
 
     #check if the employee fits the search criteria
-
+    current_salary = 0
+    if dpt == "Marketing" or "Management":
+        future_salary = salary * 1.10
+        cursal = ("Manager name: " + fname + lname + " Current Salary: "+'$' + str(round(salary,2)))
+        newsal = ("Manager name: " + fname + lname + " New Salary: "+'$' + str(round(future_salary,2)))
+    
+        
+    
+    saldict = {fname: round(future_salary, 2)}
 
     
+    print(cursal)
+    print(newsal)
+
 
 print()
 print('=========================================')
 print()
 
+    
 #iternate through the dictionary and print out the key and value as per printout
 
 
+print(saldict)
+for k, v in saldict.items():
+    print("Manager name: " +str(k) + " New salary: "+ '$' +str(v))
 
-          
-        
+
 
         
     
