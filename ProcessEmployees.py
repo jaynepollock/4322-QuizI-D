@@ -36,9 +36,12 @@ for row in reader:
 
     #check if the employee fits the search criteria
     current_salary = 0
-    if dpt == "Marketing" or "Management":
+    future_salary = 0
+    cursal = ''
+    newsal = ''
+    if dpt == "Marketing":
         future_salary = salary * 1.10
-        cursal = ("Manager name: " + fname + lname + " Current Salary: "+'$' + str(round(salary,2)))
+        cursal = ("Manager name: " + fname + ' ' + lname + " Current Salary: "+'$' + str(round(salary,2)))
         newsal = ("Manager name: " + fname + lname + " New Salary: "+'$' + str(round(future_salary,2)))
     
         
